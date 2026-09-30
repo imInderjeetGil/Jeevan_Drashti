@@ -603,3 +603,277 @@
     gap: 8px;
   }
 }
+
+/* =========================
+   APP LAYOUT / SIDEBAR
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fa;
+}
+
+.app-sidebar {
+  width: 248px;
+  min-height: 100vh;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 22px 14px;
+  box-sizing: border-box;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 10px 28px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #2563eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.brand-subtitle {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-nav-item {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 12px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-nav-item:hover {
+  background: #1f2937;
+  color: #fff;
+}
+
+.sidebar-nav-item.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.sidebar-system {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 10px;
+  margin-bottom: 12px;
+  border-top: 1px solid #1f2937;
+  border-bottom: 1px solid #1f2937;
+}
+
+.sidebar-online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+}
+
+.sidebar-system-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.sidebar-system-subtitle {
+  margin-top: 2px;
+  font-size: 10px;
+  color: #6b7280;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 6px;
+  color: #9ca3af;
+}
+
+.sidebar-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sidebar-user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-user-name {
+  color: #e5e7eb;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sidebar-user-role {
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .app-sidebar {
+    width: 64px;
+    padding: 16px 8px;
+  }
+
+  .sidebar-brand {
+    justify-content: center;
+    padding: 4px 0 24px;
+  }
+
+  .sidebar-brand > div:not(.brand-icon),
+  .sidebar-nav-item span,
+  .sidebar-system > div,
+  .sidebar-user-info,
+  .sidebar-user > svg {
+    display: none;
+  }
+
+  .sidebar-nav-item {
+    justify-content: center;
+    padding: 11px;
+  }
+
+  .sidebar-system {
+    justify-content: center;
+    padding: 13px 0;
+  }
+
+  .sidebar-user {
+    justify-content: center;
+    padding: 8px 0;
+  }
+}
+
+/* =========================
+   TYPOGRAPHY REFINEMENT
+========================= */
+
+.dashboard-header h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  font-size: 14px;
+}
+
+.sidebar-nav-item {
+  font-size: 14px;
+}
+
+.brand-title {
+  font-size: 17px;
+}
+
+.brand-subtitle {
+  font-size: 12px;
+}
+
+.dashboard-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.dashboard-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.dashboard-stat-description {
+  font-size: 12px;
+}
+
+.dashboard-panel-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.dashboard-panel-subtitle {
+  font-size: 12px;
+}
+
+.dashboard-patient-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-patient-meta {
+  font-size: 12px;
+}
+
+.sidebar-system-title {
+  font-size: 13px;
+}
+
+.sidebar-system-subtitle {
+  font-size: 11px;
+}
+
+.sidebar-user-name {
+  font-size: 12px;
+}
+
+.sidebar-user-role {
+  font-size: 11px;
+}

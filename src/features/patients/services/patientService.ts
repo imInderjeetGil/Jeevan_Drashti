@@ -19,7 +19,7 @@ export async function getPatients(): Promise<Patient[]> {
     }),
   );
 
-  return patients as unknown as Patient[];
+  return patients;
 }
 
 export async function getPatientById(

@@ -1,3 +1,13 @@
+export interface DirectusSchema {
+  patients: Patient[];
+  vitals: Vital[];
+  labs: Lab[];
+  medications: Medication[];
+  observations: Observation[];
+  risk_predictions: RiskPrediction[];
+  risk_features: RiskFeature[];
+}
+
 export interface Patient {
   id: string;
   patient_code: string;
@@ -8,10 +18,6 @@ export interface Patient {
   room_number: string;
   admission_time: string;
   status: string;
-}
-
-export interface DirectusSchema {
-  patients: Patient[];
 }
 
 export interface Vital {
@@ -30,35 +36,27 @@ export interface Lab {
   id: string;
   patient_id: string;
   timestamp: string;
-  hemoglobin: number | null;
-  white_blood_cell_count: number | null;
-  platelets: number | null;
-  creatinine: number | null;
-  lactate: number | null;
-  glucose: number | null;
-  sodium: number | null;
-  potassium: number | null;
+  test_name: string;
+  value: number | null;
+  unit: string | null;
 }
 
 export interface Medication {
   id: string;
   patient_id: string;
   medication_name: string;
-  dose: number | null;
-  unit: string | null;
+  dosage: string | null;
   route: string | null;
-  start_time: string;
+  frequency: string | null;
+  start_time: string | null;
   end_time: string | null;
-  status: string;
 }
 
 export interface Observation {
   id: string;
   patient_id: string;
   timestamp: string;
-  observation_type: string;
-  value: string;
-  notes: string | null;
+  observation: string;
 }
 
 export interface RiskPrediction {
@@ -73,21 +71,8 @@ export interface RiskPrediction {
 
 export interface RiskFeature {
   id: string;
-  prediction_id: string;
+  patient_id: string;
+  timestamp: string;
   feature_name: string;
-  feature_value: number | string | null;
-  contribution: number;
-  rank: number;
-  direction: string;
+  feature_value: number | null;
 }
-
-export interface DirectusSchema {
-  patients: Patient[];
-  vitals: Vital[];
-  labs: Lab[];
-  medications: Medication[];
-  observations: Observation[];
-  risk_predictions: RiskPrediction[];
-  risk_features: RiskFeature[];
-}
-
